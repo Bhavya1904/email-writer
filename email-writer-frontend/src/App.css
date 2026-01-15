@@ -1,0 +1,252 @@
+/* App Container Styles */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(102, 126, 234, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Header Styles */
+.app-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.app-title {
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #f5576c 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 5s ease infinite;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem !important;
+}
+
+.app-subtitle {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 1.1rem !important;
+    font-weight: 400 !important;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Section Labels */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    margin-bottom: 0.75rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.section-label .icon {
+    color: #667eea;
+}
+
+/* Custom MUI Overrides */
+.MuiTextField-root .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.MuiTextField-root .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.1);
+    border-width: 1px;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #667eea;
+    border-width: 2px;
+}
+
+.MuiTextField-root .MuiInputBase-input {
+    color: #ffffff;
+}
+
+.MuiTextField-root .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.MuiTextField-root .MuiInputLabel-root.Mui-focused {
+    color: #667eea;
+}
+
+/* Select Dropdown Styles */
+.MuiFormControl-root .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+}
+
+.MuiFormControl-root .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.MuiFormControl-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.MuiFormControl-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #667eea;
+}
+
+.MuiFormControl-root .MuiSelect-select {
+    color: #ffffff;
+}
+
+.MuiFormControl-root .MuiInputLabel-root {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.MuiFormControl-root .MuiInputLabel-root.Mui-focused {
+    color: #667eea;
+}
+
+.MuiFormControl-root .MuiSvgIcon-root {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Primary Button */
+.primary-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    border-radius: 14px !important;
+    padding: 12px 32px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(102, 126, 234, 0.5) !important;
+}
+
+.primary-btn:disabled {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: none !important;
+}
+
+/* Secondary Button */
+.secondary-btn {
+    border: 1px solid rgba(102, 126, 234, 0.5) !important;
+    border-radius: 14px !important;
+    padding: 10px 24px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    color: #667eea !important;
+    transition: all 0.3s ease !important;
+}
+
+.secondary-btn:hover {
+    background: rgba(102, 126, 234, 0.1) !important;
+    border-color: #667eea !important;
+}
+
+/* Footer Styles */
+.app-footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.footer-content .heart {
+    color: #f5576c;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.footer-content a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: #f093fb;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .app-title {
+        font-size: 2rem !important;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+}
