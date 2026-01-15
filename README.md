@@ -1,118 +1,114 @@
-✉️ AI Email Writer Extension
+# ✉️ AI Email Writer Extension
 
-An AI-powered email reply generator that helps users draft professional, context-aware email responses directly inside Gmail.
-Built with Spring Boot, React (Vite), and a Chrome Extension (MV3).
+An **AI-powered email reply generator** that helps users draft professional, context-aware email responses directly inside Gmail.  
+Built with **Spring Boot**, **React (Vite)**, and a **Chrome Extension (Manifest V3)**.
 
-🚀 Features
+---
 
-✨ Generate professional email replies using AI
+## 🚀 Features
 
-🧠 Context-aware responses based on original email content
+- ✨ Generate professional email replies using AI  
+- 🧠 Context-aware responses based on original email content  
+- 🎯 Multiple tone support (Professional, Polite, Concise, etc.)  
+- 📩 Seamless integration with Gmail via Chrome Extension  
+- ⚡ Fast and lightweight frontend using Vite + React  
+- 🔒 Secure backend with controlled CORS for extension access  
 
-🎯 Multiple tone support (Professional, Polite, Concise, etc.)
+---
 
-📩 Seamless integration with Gmail via Chrome Extension
+## 🏗️ Tech Stack
 
-⚡ Fast and lightweight frontend using Vite + React
+### Backend
+- Java 17  
+- Spring Boot  
+- REST APIs  
+- Environment-based CORS configuration  
+- Deployed on Render  
 
-🔒 Secure backend with controlled CORS for extension access
+### Frontend
+- React  
+- Vite  
+- Material UI (MUI)  
 
-🏗️ Tech Stack
-Backend
+### Chrome Extension
+- Manifest V3  
+- Content scripts for Gmail UI injection  
+- Background service worker for API communication  
 
-Java 17
+---
 
-Spring Boot
+## 📁 Project Structure
 
-REST APIs
-
-Environment-based CORS configuration
-
-Deployed on Render
-
-Frontend
-
-React
-
-Vite
-
-Material UI (MUI)
-
-Chrome Extension
-
-Manifest V3
-
-Content scripts for Gmail UI injection
-
-Background service worker for API communication
-
-📁 Project Structure
 email-project/
-├── email-writer/           # Spring Boot backend
-├── email-writer-frontend/  # React + Vite frontend
-├── email-writer-ext/       # Chrome Extension (MV3)
+├── email-writer/ # Spring Boot backend
+├── email-writer-frontend/ # React + Vite frontend
+├── email-writer-ext/ # Chrome Extension (MV3)
 └── README.md
 
-⚙️ How It Works
 
-User opens Gmail
+---
 
-Chrome Extension injects a UI button
+## ⚙️ How It Works
 
-Email content is captured by the content script
+1. User opens Gmail  
+2. Chrome Extension injects a UI button  
+3. Email content is captured by the content script  
+4. Request is sent to the background service worker  
+5. Background script calls the Spring Boot API  
+6. AI-generated reply is returned and inserted into Gmail  
 
-Request is sent to the background service worker
+---
 
-Background script calls the Spring Boot API
+## 🔐 CORS & Security Design
 
-AI-generated reply is returned and inserted into Gmail
-
-🔐 CORS & Security Design
-
-API calls are not made directly from content scripts
-
-All backend requests go through the extension background script
-
-Backend allows only:
+- API calls are **not made directly from content scripts**
+- All backend requests go through the **extension background script**
+- Backend allows only:
 
 chrome-extension://<EXTENSION_ID>
 
+- Extension ID is injected via **environment variables**
 
-Extension ID is injected via environment variables
+---
 
-🛠️ Setup Instructions
-1️⃣ Backend (Spring Boot)
+## 🛠️ Setup Instructions
+
+### 1️⃣ Backend (Spring Boot)
+
+```bash
 cd email-writer
 ./mvnw spring-boot:run
-
 
 Set environment variable:
 
 EXTENSION_ORIGIN=chrome-extension://<your-extension-id>
 
 2️⃣ Frontend (React)
+
 cd email-writer-frontend
 npm install
 npm run dev
 
-3️⃣ Chrome Extension
+3️⃣ Chrome Extension Setup
 
-Open Chrome → chrome://extensions
+    Open Chrome and go to chrome://extensions
 
-Enable Developer Mode
+    Enable Developer Mode
 
-Click Load unpacked
+    Click Load unpacked
 
-Select email-writer-ext folder
+    Select the email-writer-ext folder
 
-Copy the generated Extension ID
+    Copy the generated Extension ID
 
-Update backend EXTENSION_ORIGIN
+    Update backend EXTENSION_ORIGIN value
 
-📡 API Endpoint
+📡 API Reference
 Generate Email Reply
-POST /api/email/generate
 
+Endpoint
+
+POST /api/email/generate
 
 Request Body
 
@@ -121,49 +117,47 @@ Request Body
   "tone": "Professional"
 }
 
-
 Response
 
 AI-generated email reply (plain text)
 
-🧪 Example Use Case
+🧪 Example Use Cases
 
-Follow-up emails
+    Follow-up emails
 
-Client communication
+    Client communication
 
-Academic or professional replies
+    Academic or professional replies
 
-Polite rejections or confirmations
+    Polite rejections or confirmations
 
 📌 Future Enhancements
 
-🔑 API key authentication
+    🔑 API key authentication
 
-🧩 Tone presets & templates
+    🧩 Tone presets & templates
 
-📊 Usage analytics
+    📊 Usage analytics
 
-🌍 Multi-language support
+    🌍 Multi-language support
 
-☁️ Full cloud deployment pipeline
+    ☁️ CI/CD & full cloud deployment
 
 🤝 Contributing
 
 Contributions are welcome!
 
-Fork the repo
+    Fork the repository
 
-Create a feature branch
+    Create a new feature branch
 
-Commit changes
+    Commit your changes
 
-Open a Pull Request
+    Open a Pull Request
 
 📄 License
 
 This project is licensed under the MIT License.
-
 👤 Author
 
 Bhavya Sharma
